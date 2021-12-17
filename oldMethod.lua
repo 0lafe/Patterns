@@ -27,3 +27,4 @@ do
 end
 
 print("Done")
+print(type(component.list()))
