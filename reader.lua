@@ -1,6 +1,6 @@
-local newMethod = {}
+local reader = {}
 
-function newMethod.writeDrive()
+function reader.read(ifaceSlot)
     local component = require "component"
     local iface = component.me_interface
 
@@ -15,16 +15,12 @@ function newMethod.writeDrive()
     local d = component.proxy(guid) or error("database not found")
     local database = d.address
 
-    for i = 1 , 1 do
-        iface.setInterfacePatternInput(1, database, 1, 64, i)
+    for k,v in pairs(iface.getInterfacePattern(ifaceSlot)) do
+        print(k, v)
+        for k1,v1 in pairs(v) do
+           print(k1, v1) 
+        end
     end
-
-    for i = 1 , 2 do
-        iface.setInterfacePatternOutput(1, database, 2, 64, i)
-    end
-
-    print("Done")
-    return true
 end
 
-return newMethod
+return reader
