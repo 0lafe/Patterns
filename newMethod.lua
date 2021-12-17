@@ -1,6 +1,6 @@
-local oldMethod = {}
+local newMethod = {}
 
-function oldMethod.writeDrive()
+function newMethod.writeDrive()
     local component = require "component"
     local iface = component.me_interface
 
@@ -33,4 +33,4 @@ function oldMethod.writeDrive()
     return true
 end
 
-return oldMethod
+return newMethod
