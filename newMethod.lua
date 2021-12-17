@@ -15,6 +15,12 @@ function oldMethod.writeDrive()
     local d = component.proxy(guid) or error("database not found")
     local database = d.address
 
+    print iface
+
+    for key,value in pairs(iface) do
+      print("found member " .. key);
+    end
+
     for i = 1 , 1 do
         iface.setInterfacePatternInput(1, database, 1, 64, i)
     end
