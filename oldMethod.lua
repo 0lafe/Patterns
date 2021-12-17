@@ -1,7 +1,9 @@
 local component = require "component"
 local iface = component.me_interface
 
-function writeDrive do
+local M = {}
+
+function M.writeDrive()
     local guid = nil 
     for k, v in component.list() do 
     if v == 'database' then 
@@ -30,3 +32,5 @@ function writeDrive do
     print("Done")
     print(type(component.list()))
 end
+
+return M
