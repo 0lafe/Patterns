@@ -1,7 +1,7 @@
 local component = require "component"
 local iface = component.me_interface
 
-local M = {}
+local oldMethod = {}
 
 function M.writeDrive()
     local guid = nil 
