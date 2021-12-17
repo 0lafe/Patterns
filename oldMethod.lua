@@ -3,7 +3,7 @@ local iface = component.me_interface
 
 local oldMethod = {}
 
-function M.writeDrive()
+function oldMethod.writeDrive()
     local guid = nil 
     for k, v in component.list() do 
     if v == 'database' then 
